@@ -50,7 +50,10 @@ const myChart = (yAxisLabels, sneipList, snusList, maxSneipSnus) =>
         ],
         yAxes: [
           {
-            stacked: true
+            stacked: true,
+            ticks: {
+              fontSize: 10
+            }
           }
         ]
       }
@@ -71,8 +74,16 @@ const formatData = myJson => {
     for (let j = 0; j < weather.length; j++) {
       const sneip = myJson.values[i].slice(2, myJson.values[i].length);
       const snus = myJson.values[i + 1].slice(2, myJson.values[i + 1].length);
+      const harKasse = myJson.values[i + 2].slice(
+        2,
+        myJson.values[i + 2].length
+      );
       if (sneip[j] !== "Na" && snus[j] !== "Na") {
-        yAxisLabels.push(dates[j] + ", " + weather[j]);
+        yAxisLabels.push(
+          `${dates[j]}, ${weather[j]}, ${
+            harKasse[j].match(/[ja]/i) ? "Har kasse" : "Uten kasse"
+          }`
+        );
         sneipList.push(sneip[j]);
         snusList.push(snus[j]);
       }
