@@ -1,4 +1,4 @@
-import { API_KEY } from "./secret.mjs";
+import { API_KEY } from "./secret.mjs"; // unprotected key for testing
 
 const ctx = document.getElementById("chart");
 const locationDropDown = document.getElementById("locationDropDown");
