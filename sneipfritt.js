@@ -78,7 +78,7 @@ const formatData = myJson => {
         2,
         myJson.values[i + 2].length
       );
-      if (sneip[j] !== "Na" && snus[j] !== "Na") {
+      if (/^\d+$/.test(sneip[j]) && /^\d+$/.test(snus[j])) {
         yAxisLabels.push(
           `${dates[j]}, ${weather[j]}, ${
             harKasse[j].match(/[ja]/i) ? "Har kasse" : "Uten kasse"
