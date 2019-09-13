@@ -1,3 +1,5 @@
+import { API_KEY } from "./secret.mjs";
+
 const ctx = document.getElementById("chart");
 const locationDropDown = document.getElementById("locationDropDown");
 
@@ -102,7 +104,7 @@ const formatData = myJson => {
 
 const renderChart = sneipLocation =>
   fetch(
-    "https://sheets.googleapis.com/v4/spreadsheets/1utNjf7RxgKBd8J19Kc0RgP9LMivQ9Oa5u_MyP_RBoQA/values/Sneipfritt_lokka!A:AF?majorDimension=COLUMNS&key=AIzaSyDKdfBirQ8ra0rHCA-V3kX7ftBhArk5x3E"
+    `https://sheets.googleapis.com/v4/spreadsheets/1utNjf7RxgKBd8J19Kc0RgP9LMivQ9Oa5u_MyP_RBoQA/values/Sneipfritt_lokka!A:AF?majorDimension=COLUMNS&key=${API_KEY}`
   )
     .then(response => response.json())
     .then(myJson => {
