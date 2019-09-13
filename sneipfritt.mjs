@@ -104,7 +104,7 @@ const formatData = myJson => {
 
 const renderChart = sneipLocation =>
   fetch(
-    `https://sheets.googleapis.com/v4/spreadsheets/1utNjf7RxgKBd8J19Kc0RgP9LMivQ9Oa5u_MyP_RBoQA/values/Sneipfritt_lokka!A:AF?majorDimension=COLUMNS&key=${API_KEY}`
+    `https://sheets.googleapis.com/v4/spreadsheets/1utNjf7RxgKBd8J19Kc0RgP9LMivQ9Oa5u_MyP_RBoQA/values/Sneipfritt_lokka_v2!A:AF?majorDimension=COLUMNS&key=${API_KEY}`
   )
     .then(response => response.json())
     .then(myJson => {
